@@ -1,0 +1,51 @@
+import tkinter as tk
+import sys
+
+#主視窗
+win = tk.Tk()
+win.geometry("300x300")
+win.title("帳號密碼管理系統")
+
+#帳號區塊
+frameName = tk.Frame(win)
+frameName.pack()
+labelName = tk.Label(frameName,text = "帳號:",font = ("微軟正黑體",13))
+entryName = tk.Entry(frameName)
+labelName.grid(row = 0,column = 0)
+entryName.grid(row = 0,column = 1)
+
+#密碼區塊
+framePw = tk.Frame(win)
+framePw.pack()
+labelPw = tk.Label(framePw,text = "密碼:",font = ("微軟正黑體",13))
+entryPW = tk.Entry(framePw,show='*')
+labelPw.grid(row = 0,column = 0)
+entryPW.grid(row = 0,column = 1)
+
+
+#確認按鈕區塊
+frameCk = tk.Frame(win)
+frameCk.pack()
+buttonSreach = tk.Button(frameCk,text = "查詢",font = ("微軟正黑體",13))
+buttonNew = tk.Button(frameCk,text = "新增",font = ("微軟正黑體",13))
+buttonCange = tk.Button(frameCk,text = "修改",font = ("微軟正黑體",13))
+buttonCancel = tk.Button(frameCk,text = "刪除",font = ("微軟正黑體",13))
+buttonExit = tk.Button(frameCk,text = "離開",font = ("微軟正黑體",13),command = exit())
+buttonSreach.grid(row = 0,column = 0)
+buttonNew.grid(row = 0,column = 1)
+buttonCange.grid(row = 0,column = 2)
+buttonCancel.grid(row = 0,column = 3)
+buttonExit.grid(row= 0,column = 4)
+#顯示
+
+var2 = tk.StringVar()
+var2.set((11,22,33,44)) 
+vi = tk.Listbox(win,listvariable=var2)
+
+def exit():
+    sys.exit()
+
+
+
+#啟動
+win.mainloop()
