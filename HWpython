@@ -49,3 +49,33 @@ def exit():
 
 #啟動
 win.mainloop()
+
+
+
+
+import tkinter as tk
+
+#主視窗
+win = tk.Tk()
+#主視窗大小
+win.geometry("300x300")
+#標題
+win.title("帳密")
+
+
+lebel = tk.Label(win,
+                  text = "標籤")
+lebel.pack()
+
+button = tk.Button(win,
+                   text = "按鈕")
+
+
+def b():
+    textvar.set("按了")
+textvar = tk.StringVar()
+button = tk.Button(win,
+                   textvariable = textvar,command = b)
+textvar.set("按鈕")
+button.pack()
+win.mainloop()
